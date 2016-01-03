@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import static util.Enhanced.Assert;
 /**
@@ -13,7 +14,7 @@ public class Bank {
      * - new HashMap<>()
      */
 
-    public List<CustomCheckingAccount> accounts = null /** Insert Here, replace null **/;
+    public List<CustomCheckingAccount> accounts = new ArrayList<>();
 
     public static Bank makeDefaultBank(){
         Bank b = new Bank();
@@ -26,11 +27,14 @@ public class Bank {
         /**
          * 2. Add alice1, bob1, and alice2 to accounts
          */
+        accounts.add(alice1);
+        accounts.add(bob1);
+        accounts.add(alice2);
 
 
         Assert(accounts.get(0).getOwnerName().equals("alice")
-                && accounts.get(1).getOwnerName().equals("bob")
-                && accounts.get(2).getOwnerName().equals("alice")
+                        && accounts.get(1).getOwnerName().equals("bob")
+                        && accounts.get(2).getOwnerName().equals("alice")
         );
 
         return b;
